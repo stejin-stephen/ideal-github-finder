@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import LayoutContainer from "./LayoutContainer";
 
 const JBMono = JetBrains_Mono({ subsets: ["latin"], weight: "400" });
 
@@ -16,7 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={JBMono.className}>{children}</body>
+      <LayoutContainer>
+        <body className={JBMono.className}>{children}</body>
+      </LayoutContainer>
     </html>
   );
 }
